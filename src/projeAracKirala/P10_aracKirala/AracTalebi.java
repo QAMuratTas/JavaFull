@@ -26,8 +26,10 @@ public class AracTalebi {
         this.teslimSaati = teslimSaati;
     }
 
-    public AracTalebi(String marka, String model, String yakitTipi, String vites, double gunlukUcret) {
-        this.marka = marka;
+
+
+    public AracTalebi(String marka,String model, String yakitTipi, String vites, double gunlukUcret) {
+       this.marka=marka;
         this.model = model;
         this.yakitTipi = yakitTipi;
         this.vites = vites;
@@ -37,13 +39,13 @@ public class AracTalebi {
 
     @Override
     public String toString() {
-        return "AracTalebi{" +
-                "marka='" + marka + '\'' +
-                ", model='" + model + '\'' +
-                ", yakitTipi='" + yakitTipi + '\'' +
-                ", vites='" + vites + '\'' +
-                ", gunlukUcret=" + gunlukUcret +
-                '}';
+        return "[" +
+                "Marka= " + marka +
+                ", model= " + model +
+                ", yakitTipi= " + yakitTipi  +
+                ", vites= " + vites +
+                ", gunlukUcret= " + gunlukUcret +
+                "]";
     }
 
     public String getMarka() {

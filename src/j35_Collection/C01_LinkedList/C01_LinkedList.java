@@ -1,6 +1,6 @@
 package j35_Collection.C01_LinkedList;
 
-import java.awt.*;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;

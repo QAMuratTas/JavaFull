@@ -1,8 +1,8 @@
 package projeAracKirala.P10_aracKirala;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
+
+import static j32_Abstract.Ornek5.TechnoCafe.menu;
 
 public class MusteriVeArabaBilgisiGirisi extends AracTalebi {
 
@@ -204,7 +204,7 @@ public class MusteriVeArabaBilgisiGirisi extends AracTalebi {
     public static void musteriBilgisi(){
         System.out.println("************************************");
         System.out.println("Lutfen adinizi ve soyadinizi giriniz: ");
-        scan.nextLine();// bu dummy yi yukarıya alınca düzeldi.Yoksa atamaları yapmıyordu.
+        scan.nextLine();// ***bu dummy yi yukarıya alınca düzeldi.Yoksa atamaları yapmıyordu.
         String adSoyad= scan.nextLine();
 
         System.out.println("Lutfen id'nizi giriniz: ");
@@ -212,7 +212,7 @@ public class MusteriVeArabaBilgisiGirisi extends AracTalebi {
         //scan.next();*** gereksiz dummy atılmış
         System.out.println("Lutfen telefon numaranizi giriniz: ");
         String tlf = scan.nextLine();
-        //scan.next();
+        //scan.next();*** gereksiz dummy atılmış
         System.out.println("Lutfen yasinizi giriniz: ");
         int yas = scan.nextInt();
 
@@ -224,9 +224,9 @@ public class MusteriVeArabaBilgisiGirisi extends AracTalebi {
         System.out.println("************************************");
     }
     public static void odemeBilgileri(){
-        System.out.println("Lutfen kredi karti numaranizi giriniz: ");
+        System.out.println("Lutfen 16 haneli kredi karti numaranizi giriniz: ");
         String kKarti= scan.nextLine();
-        int uzunluk=12;
+        int uzunluk=16;//*** 12 yazıyordu
 
        if (uzunluk==kKarti.length()){
            System.out.println("Gecerli kart numarasi");
@@ -236,6 +236,63 @@ public class MusteriVeArabaBilgisiGirisi extends AracTalebi {
            scan.next();
        }
         System.out.println("Odemeniz Basari ile Gerceklesmistir. Iyi gunler dileriz...");
+       menu1();
+    }
+
+    public static void menu1() {
+
+        AracTalebi opelDizelOtomatik = new AracTalebi("Opel", "Astra", "dizel", "otomatik", 150);
+        AracTalebi opelDizelManuel = new AracTalebi("Opel", "Astra", "dizel", "manuel", 130);
+        AracTalebi opelBenzinliOtomatik = new AracTalebi("Opel", "Astra", "benzin", "otomatik", 150);
+        AracTalebi opelBenzinliManuel = new AracTalebi("Opel", "Astra", "benzin", "manuel", 130);
+        AracTalebi toyotaDizelOtomatik = new AracTalebi("Toyota", "Astra", "dizel", "otomatik", 180);
+        AracTalebi toyotaDizelManuel = new AracTalebi("Toyota", "Astra", "dizel", "manuel", 160);
+        AracTalebi toyotaBenzinliOtomatik = new AracTalebi("Toyota", "Astra", "benzin", "otomatik", 200);
+        AracTalebi toyotaBenzinliManuel = new AracTalebi("Toyota", "Astra", "benzin", "manuel", 190);
+        AracTalebi vwDizelOtomatik = new AracTalebi("VW", "Astra", "dizel", "otomatik", 180);
+        AracTalebi vwDizelManuel = new AracTalebi("VW", "Astra", "dizel", "manuel", 160);
+        AracTalebi vwBenzinliOtomatik = new AracTalebi("VW", "Astra", "benzin", "otomatik", 200);
+        AracTalebi vwBenzinliManuel = new AracTalebi("VW", "Astra", "benzin", "manuel", 190);
+
+        aracTalebiList.add(opelDizelOtomatik);
+        aracTalebiList.add(opelDizelManuel);
+        aracTalebiList.add(opelBenzinliOtomatik);
+        aracTalebiList.add(opelBenzinliManuel);
+        aracTalebiList.add(toyotaDizelOtomatik);
+        aracTalebiList.add(toyotaDizelManuel);
+        aracTalebiList.add(toyotaBenzinliOtomatik);
+        aracTalebiList.add(toyotaBenzinliManuel);
+        aracTalebiList.add(vwDizelOtomatik);
+        aracTalebiList.add(vwDizelManuel);
+        aracTalebiList.add(vwBenzinliOtomatik);
+        aracTalebiList.add(vwBenzinliManuel);
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println(" Lütfen bir seçim yapınız : \n 1- Araç Kiralam Fiyatları  \n2-Araç Talep  \n3-Çıkış");
+        int secim = sc.nextInt();
+        switch (secim) {
+            case 1:
+
+
+
+
+                for (int i = 0; i <aracTalebiList.size() ; i++) {
+
+                    System.out.println((i+1)+". Arabamız"+aracTalebiList.get(i));
+
+                }
+
+            case 2:
+                    aracTalep();
+                      case 3:
+                          System.out.println("Güle güle....");
+                          break;
+            default:
+                System.out.println("Lutfen 1 den 3 e kadar seçim yapınız :");
+        }
+
+
+
     }
 
 
