@@ -1,5 +1,6 @@
 package projeAracKirala.P10_aracKirala;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 import static j32_Abstract.Ornek5.TechnoCafe.menu;
@@ -13,7 +14,13 @@ public class MusteriVeArabaBilgisiGirisi extends AracTalebi {
     static int toplamGun;
 
     public static void aracTalep() {
-        System.out.println("Lutfen araci alacaginiz sehri giriniz:");
+        System.out.println("\n\n Devam için (d) ye Çıkış için (q)");
+        String devam= scan.nextLine();
+        if (devam.contains("q")){
+            cikis();
+        }
+
+        System.out.println("\n\nLutfen araci alacaginiz sehri giriniz:");
         String sehir = scan.nextLine();
         System.out.println("Lutfen teslim alacaginiz gunu giriniz: (Ornek: 12.04)");// ay ve gunu ayirmak mi yoksa string almak mi?
         String alisGunu = scan.next();
@@ -51,7 +58,9 @@ public class MusteriVeArabaBilgisiGirisi extends AracTalebi {
         System.out.println("Odenecek toplam gun ayisi: "+toplamGun);
         System.out.println("************************************");
     }
-
+public static void cikis(){
+        System.exit(0);
+}
     public static void getAraba(String marka, String model, String yakitTipi,String vites, Integer gunlukUcret){
     aracTalebiList.stream().
             filter(t-> t.getMarka().equalsIgnoreCase(marka) && t.getModel().equalsIgnoreCase(model)&&
@@ -236,64 +245,40 @@ public class MusteriVeArabaBilgisiGirisi extends AracTalebi {
            scan.next();
        }
         System.out.println("Odemeniz Basari ile Gerceklesmistir. Iyi gunler dileriz...");
-       menu1();
-    }
-
-    public static void menu1() {
-
-        AracTalebi opelDizelOtomatik = new AracTalebi("Opel", "Astra", "dizel", "otomatik", 150);
-        AracTalebi opelDizelManuel = new AracTalebi("Opel", "Astra", "dizel", "manuel", 130);
-        AracTalebi opelBenzinliOtomatik = new AracTalebi("Opel", "Astra", "benzin", "otomatik", 150);
-        AracTalebi opelBenzinliManuel = new AracTalebi("Opel", "Astra", "benzin", "manuel", 130);
-        AracTalebi toyotaDizelOtomatik = new AracTalebi("Toyota", "Astra", "dizel", "otomatik", 180);
-        AracTalebi toyotaDizelManuel = new AracTalebi("Toyota", "Astra", "dizel", "manuel", 160);
-        AracTalebi toyotaBenzinliOtomatik = new AracTalebi("Toyota", "Astra", "benzin", "otomatik", 200);
-        AracTalebi toyotaBenzinliManuel = new AracTalebi("Toyota", "Astra", "benzin", "manuel", 190);
-        AracTalebi vwDizelOtomatik = new AracTalebi("VW", "Astra", "dizel", "otomatik", 180);
-        AracTalebi vwDizelManuel = new AracTalebi("VW", "Astra", "dizel", "manuel", 160);
-        AracTalebi vwBenzinliOtomatik = new AracTalebi("VW", "Astra", "benzin", "otomatik", 200);
-        AracTalebi vwBenzinliManuel = new AracTalebi("VW", "Astra", "benzin", "manuel", 190);
-
-        aracTalebiList.add(opelDizelOtomatik);
-        aracTalebiList.add(opelDizelManuel);
-        aracTalebiList.add(opelBenzinliOtomatik);
-        aracTalebiList.add(opelBenzinliManuel);
-        aracTalebiList.add(toyotaDizelOtomatik);
-        aracTalebiList.add(toyotaDizelManuel);
-        aracTalebiList.add(toyotaBenzinliOtomatik);
-        aracTalebiList.add(toyotaBenzinliManuel);
-        aracTalebiList.add(vwDizelOtomatik);
-        aracTalebiList.add(vwDizelManuel);
-        aracTalebiList.add(vwBenzinliOtomatik);
-        aracTalebiList.add(vwBenzinliManuel);
-
-        Scanner sc = new Scanner(System.in);
-        System.out.println(" Lütfen bir seçim yapınız : \n 1- Araç Kiralam Fiyatları  \n2-Araç Talep  \n3-Çıkış");
-        int secim = sc.nextInt();
-        switch (secim) {
-            case 1:
-
-
-
-
-                for (int i = 0; i <aracTalebiList.size() ; i++) {
-
-                    System.out.println((i+1)+". Arabamız"+aracTalebiList.get(i));
-
-                }
-
-            case 2:
-                    aracTalep();
-                      case 3:
-                          System.out.println("Güle güle....");
-                          break;
-            default:
-                System.out.println("Lutfen 1 den 3 e kadar seçim yapınız :");
-        }
-
-
 
     }
+public static void araclist(){
+    AracTalebi opelDizelOtomatik = new AracTalebi("Opel", "Astra", "dizel", "otomatik", 150);
+    AracTalebi opelDizelManuel = new AracTalebi("Opel", "Astra", "dizel", "manuel", 130);
+    AracTalebi opelBenzinliOtomatik = new AracTalebi("Opel", "Astra", "benzin", "otomatik", 150);
+    AracTalebi opelBenzinliManuel = new AracTalebi("Opel", "Astra", "benzin", "manuel", 130);
+    AracTalebi toyotaDizelOtomatik = new AracTalebi("Toyota", "Astra", "dizel", "otomatik", 180);
+    AracTalebi toyotaDizelManuel = new AracTalebi("Toyota", "Astra", "dizel", "manuel", 160);
+    AracTalebi toyotaBenzinliOtomatik = new AracTalebi("Toyota", "Astra", "benzin", "otomatik", 200);
+    AracTalebi toyotaBenzinliManuel = new AracTalebi("Toyota", "Astra", "benzin", "manuel", 190);
+    AracTalebi vwDizelOtomatik = new AracTalebi("VW", "Astra", "dizel", "otomatik", 180);
+    AracTalebi vwDizelManuel = new AracTalebi("VW", "Astra", "dizel", "manuel", 160);
+    AracTalebi vwBenzinliOtomatik = new AracTalebi("VW", "Astra", "benzin", "otomatik", 200);
+    AracTalebi vwBenzinliManuel = new AracTalebi("VW", "Astra", "benzin", "manuel", 190);
+
+    aracTalebiList.add(opelDizelOtomatik);
+    aracTalebiList.add(opelDizelManuel);
+    aracTalebiList.add(opelBenzinliOtomatik);
+    aracTalebiList.add(opelBenzinliManuel);
+    aracTalebiList.add(toyotaDizelOtomatik);
+    aracTalebiList.add(toyotaDizelManuel);
+    aracTalebiList.add(toyotaBenzinliOtomatik);
+    aracTalebiList.add(toyotaBenzinliManuel);
+    aracTalebiList.add(vwDizelOtomatik);
+    aracTalebiList.add(vwDizelManuel);
+    aracTalebiList.add(vwBenzinliOtomatik);
+    aracTalebiList.add(vwBenzinliManuel);
+    for (int i = 0; i <aracTalebiList.size() ; i++) {
+        System.out.print("\n"+(i+1)+". aracımız"+aracTalebiList.get(i));
+
+    }
+}
+
 
 
 }
