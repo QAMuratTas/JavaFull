@@ -67,6 +67,9 @@ public static void cikis(){
             t.getYakitTipi().equalsIgnoreCase(yakitTipi)&& t.getVites().equalsIgnoreCase(vites)).
             forEach(System.out::println);
     }
+
+
+
     public static void islemeDevamDongusu(){
         System.out.println("Devam etmek istiyorsaniz 'e' ye, istemiyorsaniz 'h' ye basin");
         String devam = scan.next();
