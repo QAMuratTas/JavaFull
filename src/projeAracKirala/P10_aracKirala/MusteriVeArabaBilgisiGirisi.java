@@ -202,7 +202,7 @@ public class MusteriVeArabaBilgisiGirisi extends AracTalebi {
                 // ya da burası handle edilip liste eklenir hale getirlecek. list e eklenirse yukarıdaki switch
                 // case bozulacak...
 
-                System.out.println("Lutfen talep ettiginiz yeni arac markasini giriniz");
+              /*  System.out.println("Lutfen talep ettiginiz yeni arac markasini giriniz");
                 String yeniMarka = scan.nextLine();
                 scan.nextLine();
                 System.out.println("Lutfen talep ettiginiz yeni model  giriniz");
@@ -219,7 +219,7 @@ public class MusteriVeArabaBilgisiGirisi extends AracTalebi {
                 System.out.println("Odeyeceginiz toplam ucret: " + odenecek_Ucret13);
                 System.out.println("************************************");
                 islemeDevamDongusu();
-                break;
+                break;*/
             default:
                 System.out.println("Lutfen gecerli bir arac talep numarasi giriniz");
         }

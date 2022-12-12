@@ -41,10 +41,10 @@ public class AracTalebi {
     public String toString() {
         return "[" +
                 "Marka= " + marka +
-                ", model= " + model +
-                ", yakitTipi= " + yakitTipi  +
-                ", vites= " + vites +
-                ", gunlukUcret= " + gunlukUcret +
+                ", Model= " + model +
+                ", YakitTipi= " + yakitTipi  +
+                ", Vites= " + vites +
+                ", Günlük Ücret= " + gunlukUcret +
                 "]";
     }
 
