@@ -84,19 +84,20 @@ public class MusteriVeArabaBilgisiGirisi extends AracTalebi {
 
     public static void arabalar() {
 
-        AracTalebi opelDizelOtomatik = new AracTalebi("Opel", "Astra", "dizel", "otomatik", 150);
-        AracTalebi opelDizelManuel = new AracTalebi("Opel", "Astra", "dizel", "manuel", 130);
-        AracTalebi opelBenzinliOtomatik = new AracTalebi("Opel", "Vectra", "benzin", "otomatik", 150);
-        AracTalebi opelBenzinliManuel = new AracTalebi("Opel", "Vectra", "benzin", "manuel", 130);
+        AracTalebi opelDizelOtomatik = new AracTalebi("Opel  ", "Astra  ", "dizel", "otomatik", 150);
+        AracTalebi opelDizelManuel = new AracTalebi("Opel  ", "Astra  ", "dizel", "manuel", 130);
+        AracTalebi opelBenzinliOtomatik = new AracTalebi("Opel  ", "Vectra ", "benzin", "otomatik", 150);
+        AracTalebi opelBenzinliManuel = new AracTalebi("Opel  ", "Vectra ", "benzin", "manuel", 130);
         AracTalebi toyotaDizelOtomatik = new AracTalebi("Toyota", "Corolla", "dizel", "otomatik", 180);
         AracTalebi toyotaDizelManuel = new AracTalebi("Toyota", "Corolla", "dizel", "manuel", 160);
-        AracTalebi toyotaBenzinliOtomatik = new AracTalebi("Toyota", "Yaris", "benzin", "otomatik", 200);
+        AracTalebi toyotaBenzinliOtomatik = new AracTalebi("Toyota", "Yaris  ", "benzin", "otomatik", 200);
         AracTalebi toyotaBenzinliManuel = new AracTalebi("Toyota", "Avensis", "benzin", "manuel", 190);
-        AracTalebi vwDizelOtomatik = new AracTalebi("VW", "Golf", "dizel", "otomatik", 180);
-        AracTalebi vwDizelManuel = new AracTalebi("VW", "Golf", "dizel", "manuel", 160);
-        AracTalebi vwBenzinliOtomatik = new AracTalebi("VW", "Passat", "benzin", "otomatik", 200);
-        AracTalebi vwBenzinliManuel = new AracTalebi("VW", "Passat", "benzin", "manuel", 190);
-        AracTalebi fordFocusBenzManuel = new AracTalebi("ford", "focus", "benzin", "manuel", 175);// *** Örnek burada firma arka planda yeniraraç ekledi
+        AracTalebi vwDizelOtomatik = new AracTalebi("VW    ", "Golf   ", "dizel", "otomatik", 180);
+        AracTalebi vwDizelManuel = new AracTalebi("VW    ", "Golf   ", "dizel", "manuel", 160);
+        AracTalebi vwBenzinliOtomatik = new AracTalebi("VW    ", "Passat ", "benzin", "otomatik", 200);
+        AracTalebi vwBenzinliManuel = new AracTalebi("VW    ", "Passat ", "benzin", "manuel", 190);
+        AracTalebi fordFocusBenzManuel = new AracTalebi("ford  ", "focus  ", "benzin", "manuel", 175);// *** Örnek burada firma arka planda yeniraraç ekledi
+        AracTalebi fordKugaBenzOTo= new AracTalebi("ford  ","Kuga   ","benzin","otomatik",250);
         aracTalebiList.add(opelDizelOtomatik);
         aracTalebiList.add(opelDizelManuel);
         aracTalebiList.add(opelBenzinliOtomatik);
@@ -110,7 +111,11 @@ public class MusteriVeArabaBilgisiGirisi extends AracTalebi {
         aracTalebiList.add(vwBenzinliOtomatik);
         aracTalebiList.add(vwBenzinliManuel);
         aracTalebiList.add(fordFocusBenzManuel);//***
+        aracTalebiList.add(fordKugaBenzOTo);//***
+
     }//*** arabaları ayrı bir method yaptım
+
+
        /* System.out.println("\n Lutfen talep ettiginiz aracin numarasini giriniz : \n1 : Opel Dizel Otomatik " +
                 "\n2 : Opel Dizel Manuel \n3 : Opel Benzinli Otomatik \n4 : Opel Benzinli Manuel" +
                 "\n5 : Toyota Dizel Otomatik" + "\n6 : Toyota Dizel Manuel\n7 : Toyota Benzinli Otomatik" +
@@ -119,8 +124,8 @@ public class MusteriVeArabaBilgisiGirisi extends AracTalebi {
        public static void giris(){
         System.out.println("************************************");//*** bu method eklendi.
         for (int i = 0; i < aracTalebiList.size(); i++) {
-            System.out.print("\n" + (i + 1) + "-)" + aracTalebiList.get(i));
-
+            System.out.print("\n" + (i + 1) + "-)" +"Marka :"+ aracTalebiList.get(i).getMarka() + ",  Model : "+ aracTalebiList.get(i).getModel()+ ",  Yakıt Tipi : "+aracTalebiList.get(i).getYakitTipi()+", Vites Tipi : "+aracTalebiList.get(i).getVites()+ ",  Günlük Ücret: "+aracTalebiList.get(i).getGunlukUcret());
+// burasını printf e sokabiliriz.
         }
         System.out.println("\n*******************************************************************");
         System.out.println("\n Lütfen Araç seçiminizi yapınız :");
@@ -128,16 +133,22 @@ public class MusteriVeArabaBilgisiGirisi extends AracTalebi {
         if (tercih<=aracTalebiList.size()) {//*** bu döngü eklenerek fazla code satırı içeren switch case den kurtulmuş olduk.
             for (int i = 0; i < aracTalebiList.size(); i++) {
                 if (tercih == (i + 1)) {
-                    System.out.println(aracTalebiList.get(i));
+                   // System.out.println(aracTalebiList.get(i));
                     long odenecek_Ucret1 = (long) (toplamGun * (aracTalebiList.get(i).getGunlukUcret())+sehircrpn);
-                    System.out.println("Alacağınız şehir "+ sehir+ " olduğundan "+sehircrpn+ " ₺ teslimat ücreti toplam ödeyeceğiniz tutara eklenmiştir.");
-                    System.out.println("Odeyeceginiz toplam ucret: " + odenecek_Ucret1);
+                    System.out.println("Kiralayacağınız gün :"+toplamGun);
+                    System.out.println("Kiraladığınız araç "+"Marka: "+ aracTalebiList.get(i).getMarka()+",   Model : "+aracTalebiList.get(i).getModel()+ ",   vites tipi :"+aracTalebiList.get(i).getVites()+",   yakıt tipi : "+ aracTalebiList.get(i).getYakitTipi());
+                    System.out.println("Kiralayacağınız aracın günlük ücreti :"+ aracTalebiList.get(i).getGunlukUcret());
+                    System.out.println("Teslim alacağınız Şehir  "+sehir+ " oldugundan extradan "+sehircrpn+" ₺ teslimat ücreti eklenmiştir." );
+                    // System.out.println("Kiralayacağınız gün :"+toplamGun+"Alacağınız şehir "+ sehir+ " olduğundan "+sehircrpn+ " ₺ teslimat ücreti toplam ödeyeceğiniz tutara eklenmiştir.");
+                    System.out.println("Ödeyeceginiz toplam ucret: " + odenecek_Ucret1+ " ₺");
                     islemeDevamDongusu();
                 }
 
             }
         }
-        else System.out.println("Lütfen geçeerli araç giriniz....") ;giris();}
+
+        else System.out.println("Lütfen geçerli araç giriniz....") ;
+        giris();}
 // arka planda firma araç ekleyebilir. bu nedenle yukarıda for loop yaparak hem clean code oldu hem de yeni araç girildiğinde listede o araç da gözükecek ve seçilecektir
         // böyle daha dinamik code oldu...
         /*switch (tercih) {
