@@ -15,7 +15,7 @@ public class AracTalebi {
     private String model;
     private String yakitTipi;
     private String vites;
-    private double gunlukUcret;
+    private long gunlukUcret;
 
 
     public AracTalebi(String alinacakSehir, String alinacakGun, String alisSaati, String teslimGunu, String teslimSaati) {
@@ -28,7 +28,7 @@ public class AracTalebi {
 
 
 
-    public AracTalebi(String marka,String model, String yakitTipi, String vites, double gunlukUcret) {
+    public AracTalebi(String marka,String model, String yakitTipi, String vites, long gunlukUcret) {
        this.marka=marka;
         this.model = model;
         this.yakitTipi = yakitTipi;
@@ -90,7 +90,7 @@ public class AracTalebi {
         return gunlukUcret;
     }
 
-    public void setGunlukUcret(double gunlukUcret) {
+    public void setGunlukUcret(long gunlukUcret) {
 
         this.gunlukUcret = gunlukUcret;
     }

@@ -8,8 +8,9 @@ public class Runner {
         System.out.println("*******Ebikgabık Rent a Car************");
         System.out.println("*******Araçlarımız  Hizmetinizde************");
        // MusteriVeArabaBilgisiGirisi.araclist();
-        MusteriVeArabaBilgisiGirisi.aracTalep();
         MusteriVeArabaBilgisiGirisi.arabalar();
+        MusteriVeArabaBilgisiGirisi.aracTalep();
+        MusteriVeArabaBilgisiGirisi.giris();//*** bu method eklendi
         MusteriVeArabaBilgisiGirisi.musteriBilgisi();
         MusteriVeArabaBilgisiGirisi.odemeBilgileri();
 
